@@ -8,19 +8,13 @@
 import SwiftUI
 
 struct AdditionView: View {
-    
-    //MARK: Stored properties
     @State var number1 = Int.random(in: 1...12)
     @State var number2 = Int.random(in: 1...12)
     @State var inputGiven = ""
     @State var feedback = ""
-    // Has an answer been checked?
     @State var answerChecked = false
-    
-    // Was the answer given actually correct?
     @State var answerCorrect = false
     
-    // MARK: Computed properties
     var correctSum: Int {
         return number1 + number2
     }
@@ -44,22 +38,17 @@ struct AdditionView: View {
                     .multilineTextAlignment(.trailing)
             }
             Button(action: {
-                // Answer has been checked!
                 answerChecked = true
-                //Conver the input given to an integer, if possible
                 guard let sumGiven = Int(inputGiven) else {
-                    // Sadness, not a number
                     answerCorrect = false
                     feedback = "Input is invalid."
                     return
                 }
                 answerChecked = true
                 if sumGiven == correctSum {
-                    // Celebrate
                     answerCorrect = true
                     feedback = "The answer is correct!"
                 } else {
-                    // Sadness, tehy gave a number, but it's not correct
                     answerCorrect = false
                     feedback = "The correct answer was \(correctSum)"
                 }
