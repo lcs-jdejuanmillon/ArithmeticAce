@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Lottie
 
 struct AdditionView: View {
     // MARK: Stored properties
@@ -90,6 +91,15 @@ struct AdditionView: View {
                     .buttonStyle(.bordered)
                 //Only show this button when an answer has been check
                     .opacity(answerChecked ? 1.0 : 0.0)
+            }
+            // Reaction animation
+            ZStack {
+                LottieView(animationNamed: "51926-happy")
+                    .padding()
+                    .opacity(answerCorrect ? 1.0 : 0.0)
+                LottieView(animationNamed: "84655-swinging-sad-emoji")
+                    .padding()
+                    .opacity(answerChecked && !answerCorrect ? 1.0 : 0.0)
             }
             Spacer()
         }
