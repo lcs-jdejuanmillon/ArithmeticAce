@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SubtractionView: View {
     // MARK: Stored properties
-    @State var subtrahend = Int.random(in: 1...12)
-    @State var correctDifference = Int.random(in: 1...12)
+    @State var minuend = Int.random(in: 1...144)
+    @State var subtrahend = 0
     @State var inputGiven = ""
     // Has an answer been checked?
     @State var answerChecked = false
@@ -19,8 +19,8 @@ struct SubtractionView: View {
     
     // MARK: Computed properties
     // What is the correct product?
-    var minuerd: Int {
-        return  subtrahend + correctDifference
+    var correctDivfference: Int {
+        return minuend - subtrahend
     }
     var body: some View{
         VStack(spacing: 0) {
@@ -28,7 +28,7 @@ struct SubtractionView: View {
                 Text("-")
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Text("\(minuerd)")
+                    Text("\(minuend)")
                     Text("\(subtrahend)")
                 }
             }
@@ -77,8 +77,8 @@ struct SubtractionView: View {
                     .padding()
                     .buttonStyle(.bordered)
                 Button(action: {
-                    subtrahend = Int.random(in: 1...12)
-                    correctDifference = Int.random(in: 1...12)
+                    minuend = Int.random(in: 1...144)
+                    subtrahend = Int.random(in: 1...minuend)
                     answerChecked = false
                     answerCorrect = false
                     inputGiven = ""
@@ -91,10 +91,23 @@ struct SubtractionView: View {
                 //Only show this button when an answer has been check
                     .opacity(answerChecked ? 1.0 : 0.0)
             }
+            // Reaction animation
+            ZStack {
+                LottieView(animationNamed: "51926-happy")
+                    .padding()
+                    .opacity(answerCorrect ? 1.0 : 0.0)
+                LottieView(animationNamed: "84655-swinging-sad-emoji")
+                    .padding()
+                    .opacity(answerChecked && !answerCorrect ? 1.0 : 0.0)
+            }
             Spacer()
         }
         .padding(.horizontal)
         .font(.system(size: 72))
+        // Closure (block of code) will run once when the view is loaded
+        .task {
+            subtrahend = Int.random(in: 1...minuend)
+        }
     }
 }
 
