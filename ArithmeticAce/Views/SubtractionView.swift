@@ -19,7 +19,7 @@ struct SubtractionView: View {
     
     // MARK: Computed properties
     // What is the correct product?
-    var correctDivfference: Int {
+    var correctDifference: Int {
         return minuend - subtrahend
     }
     var body: some View{
