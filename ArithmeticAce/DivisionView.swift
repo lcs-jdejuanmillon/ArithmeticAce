@@ -1,16 +1,16 @@
 //
-//  MultiplicationView.swift
+//  DivisionView.swift
 //  ArithmeticAce
 //
-//  Created by Jacobo de Juan Millon on 2022-02-07.
+//  Created by Jacobo de Juan Millon on 2022-02-09.
 //
 
 import SwiftUI
 
-struct MultiplicationView: View {
-    // MARK: Stored properties
-    @State var multiplicand = Int.random(in: 1...12)
-    @State var multiplicator = Int.random(in: 1...12)
+struct DivisionView: View {
+    // MARK: Stored properties augend addend
+    @State var divisor = Int.random(in: 1...12)
+    @State var quotient = Int.random(in: 1...12)
     @State var inputGiven = ""
     // Has an answer been checked?
     @State var answerChecked = false
@@ -19,17 +19,17 @@ struct MultiplicationView: View {
     
     // MARK: Computed properties
     // What is the correct product?
-    var correctProduct: Int {
-        return multiplicand * multiplicator
+    var dividend: Int {
+        return  divisor * quotient
     }
     var body: some View{
         VStack(spacing: 0) {
             HStack {
-                Text("×")
+                Text("÷")
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Text("\(multiplicand)")
-                    Text("\(multiplicator)")
+                    Text("\(dividend)")
+                    Text("\(divisor)")
                 }
             }
             Divider()
@@ -55,13 +55,13 @@ struct MultiplicationView: View {
                     // Answer has been checked!
                     answerChecked = true
                     // Convert the input given to an integer, if possible
-                    guard let productGiven = Int(inputGiven) else {
+                    guard let quotientGiven = Int(inputGiven) else {
                         // Sadness, not a number
                         answerCorrect = false
                         return
                     }
                     // Check the answer!
-                    if productGiven == correctProduct {
+                    if quotientGiven == quotient {
                         // Celebrate! 👍🏼
                         answerCorrect = true
                     } else {
@@ -77,8 +77,8 @@ struct MultiplicationView: View {
                     .padding()
                     .buttonStyle(.bordered)
                 Button(action: {
-                    multiplicand = Int.random(in: 1...12)
-                    multiplicator = Int.random(in: 1...12)
+                    divisor = Int.random(in: 1...12)
+                    quotient = Int.random(in: 1...12)
                     answerChecked = false
                     answerCorrect = false
                     inputGiven = ""
@@ -98,8 +98,8 @@ struct MultiplicationView: View {
     }
 }
 
-struct MultiplicationView_Previews: PreviewProvider {
+struct DivisionView_Previews: PreviewProvider {
     static var previews: some View {
-        MultiplicationView()
+        DivisionView()
     }
 }
