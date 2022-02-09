@@ -10,8 +10,8 @@ import Lottie
 
 struct AdditionView: View {
     // MARK: Stored properties
-    @State var augend = Int.random(in: 1...12)
-    @State var addend = Int.random(in: 1...12)
+    @State var augend = Int.random(in: 1...143)
+    @State var addend = 0
     @State var inputGiven = ""
     // Has an answer been checked?
     @State var answerChecked = false
@@ -105,6 +105,9 @@ struct AdditionView: View {
         }
         .padding(.horizontal)
         .font(.system(size: 72))
+        .task {
+            addend = Int.random(in: 1...144-augend)
+        }
     }
 }
 
