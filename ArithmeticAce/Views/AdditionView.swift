@@ -33,31 +33,10 @@ struct AdditionView: View {
                                 answerCorrect: answerCorrect,
                                 inputGiven: $inputGiven)
             ZStack{
-                Button(action: {
-                    // Answer has been checked!
-                    answerChecked = true
-                    // Convert the input given to an integer, if possible
-                    guard let sumGiven = Int(inputGiven) else {
-                        // Sadness, not a number
-                        answerCorrect = false
-                        return
-                    }
-                    // Check the answer!
-                    if sumGiven == correctSum {
-                        // Celebrate! 👍🏼
-                        answerCorrect = true
-                    } else {
-                        // Sadness, they gave a number, but it's correct 😭
-                        answerCorrect = false
-                    }
-                }, label: {
-                    Text("Check Answer")
-                        .font(.largeTitle)
-                })
-                //Only show when this buttom when an answer has not been check
-                    .opacity(answerChecked ? 0.0 : 1.0)
-                    .padding()
-                    .buttonStyle(.bordered)
+                CheckAnswerView(answerChecked: $answerChecked,
+                                answerCorrect: $answerCorrect,
+                                inputGiven: inputGiven,
+                                correctAnswer: correctSum)
                 Button(action: {
                     augend = Int.random(in: 1...143)
                     addend = Int.random(in: 1...144-augend)
@@ -74,14 +53,8 @@ struct AdditionView: View {
                     .opacity(answerChecked ? 1.0 : 0.0)
             }
             // Reaction animation
-            ZStack {
-                LottieView(animationNamed: "51926-happy")
-                    .padding()
-                    .opacity(answerCorrect ? 1.0 : 0.0)
-                LottieView(animationNamed: "84655-swinging-sad-emoji")
-                    .padding()
-                    .opacity(answerChecked && !answerCorrect ? 1.0 : 0.0)
-            }
+            AnimationsView(answerChecked: answerChecked,
+                           answerCorrect: answerCorrect)
             Spacer()
         }
         .padding(.horizontal)

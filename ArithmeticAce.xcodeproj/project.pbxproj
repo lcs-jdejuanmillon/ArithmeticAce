@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D0F664027BA9A8600AAE259 /* QuestionPresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F663F27BA9A8600AAE259 /* QuestionPresentationView.swift */; };
 		0D0F664227BAA04600AAE259 /* AnswerAndResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F664127BAA04600AAE259 /* AnswerAndResultView.swift */; };
+		0D0F664427BAA47F00AAE259 /* CheckAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F664327BAA47F00AAE259 /* CheckAnswerView.swift */; };
+		0D0F664627BAA64700AAE259 /* AnimationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0F664527BAA64700AAE259 /* AnimationsView.swift */; };
 		0D2985D527B15B5E0038914B /* ArithmeticAceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2985D427B15B5E0038914B /* ArithmeticAceApp.swift */; };
 		0D2985D727B15B5E0038914B /* MultiplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2985D627B15B5E0038914B /* MultiplicationView.swift */; };
 		0D2985D927B15B620038914B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D2985D827B15B620038914B /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		0D0F663F27BA9A8600AAE259 /* QuestionPresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPresentationView.swift; sourceTree = "<group>"; };
 		0D0F664127BAA04600AAE259 /* AnswerAndResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerAndResultView.swift; sourceTree = "<group>"; };
+		0D0F664327BAA47F00AAE259 /* CheckAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAnswerView.swift; sourceTree = "<group>"; };
+		0D0F664527BAA64700AAE259 /* AnimationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsView.swift; sourceTree = "<group>"; };
 		0D2985D127B15B5E0038914B /* ArithmeticAce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArithmeticAce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D2985D427B15B5E0038914B /* ArithmeticAceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticAceApp.swift; sourceTree = "<group>"; };
 		0D2985D627B15B5E0038914B /* MultiplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationView.swift; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 				0D5EABAD27B422FE0040CA06 /* LottieView.swift */,
 				0D0F663F27BA9A8600AAE259 /* QuestionPresentationView.swift */,
 				0D0F664127BAA04600AAE259 /* AnswerAndResultView.swift */,
+				0D0F664327BAA47F00AAE259 /* CheckAnswerView.swift */,
+				0D0F664527BAA64700AAE259 /* AnimationsView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -197,8 +203,10 @@
 			files = (
 				0D2985D727B15B5E0038914B /* MultiplicationView.swift in Sources */,
 				0D0F664227BAA04600AAE259 /* AnswerAndResultView.swift in Sources */,
+				0D0F664427BAA47F00AAE259 /* CheckAnswerView.swift in Sources */,
 				0D0F664027BA9A8600AAE259 /* QuestionPresentationView.swift in Sources */,
 				0D5EABA627B40FE10040CA06 /* SubtractionView.swift in Sources */,
+				0D0F664627BAA64700AAE259 /* AnimationsView.swift in Sources */,
 				0D2985D527B15B5E0038914B /* ArithmeticAceApp.swift in Sources */,
 				0D90CE1A27B1F4E4009AFD49 /* AdditionView.swift in Sources */,
 				0D5EABAE27B422FE0040CA06 /* LottieView.swift in Sources */,

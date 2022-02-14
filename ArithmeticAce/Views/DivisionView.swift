@@ -10,7 +10,7 @@ import SwiftUI
 struct DivisionView: View {
     // MARK: Stored properties augend addend
     @State var divisor = Int.random(in: 1...12)
-    @State var quotient = Int.random(in: 1...12)
+    @State var correctQuotient = Int.random(in: 1...12)
     @State var inputGiven = ""
     // Has an answer been checked?
     @State var answerChecked = false
@@ -20,7 +20,7 @@ struct DivisionView: View {
     // MARK: Computed properties
     // What is the correct product?
     var dividend: Int {
-        return  divisor * quotient
+        return  divisor * correctQuotient
     }
     var body: some View {
         VStack(spacing: 0) {
@@ -32,34 +32,13 @@ struct DivisionView: View {
                                 answerCorrect: answerCorrect,
                                 inputGiven: $inputGiven)
             ZStack{
-                Button(action: {
-                    // Answer has been checked!
-                    answerChecked = true
-                    // Convert the input given to an integer, if possible
-                    guard let quotientGiven = Int(inputGiven) else {
-                        // Sadness, not a number
-                        answerCorrect = false
-                        return
-                    }
-                    // Check the answer!
-                    if quotientGiven == quotient {
-                        // Celebrate! 👍🏼
-                        answerCorrect = true
-                    } else {
-                        // Sadness, they gave a number, but it's correct 😭
-                        answerCorrect = false
-                    }
-                }, label: {
-                    Text("Check Answer")
-                        .font(.largeTitle)
-                })
-                //Only show when this buttom when an answer has not been check
-                    .opacity(answerChecked ? 0.0 : 1.0)
-                    .padding()
-                    .buttonStyle(.bordered)
+                CheckAnswerView(answerChecked: $answerChecked,
+                                answerCorrect: $answerCorrect,
+                                inputGiven: inputGiven,
+                                correctAnswer: correctQuotient)
                 Button(action: {
                     divisor = Int.random(in: 1...12)
-                    quotient = Int.random(in: 1...12)
+                    correctQuotient = Int.random(in: 1...12)
                     answerChecked = false
                     answerCorrect = false
                     inputGiven = ""
@@ -73,14 +52,8 @@ struct DivisionView: View {
                     .opacity(answerChecked ? 1.0 : 0.0)
             }
             // Reaction animation
-            ZStack {
-                LottieView(animationNamed: "51926-happy")
-                    .padding()
-                    .opacity(answerCorrect ? 1.0 : 0.0)
-                LottieView(animationNamed: "84655-swinging-sad-emoji")
-                    .padding()
-                    .opacity(answerChecked && !answerCorrect ? 1.0 : 0.0)
-            }
+            AnimationsView(answerChecked: answerChecked,
+                           answerCorrect: answerCorrect)
             Spacer()
         }
         .padding(.horizontal)
