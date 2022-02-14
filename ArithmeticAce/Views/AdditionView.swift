@@ -78,8 +78,8 @@ struct AdditionView: View {
                     .padding()
                     .buttonStyle(.bordered)
                 Button(action: {
-                    augend = Int.random(in: 1...12)
-                    addend = Int.random(in: 1...12)
+                    augend = Int.random(in: 1...143)
+                    addend = Int.random(in: 1...144-augend)
                     answerChecked = false
                     answerCorrect = false
                     inputGiven = ""
