@@ -24,14 +24,9 @@ struct MultiplicationView: View {
     }
     var body: some View{
         VStack(spacing: 0) {
-            HStack {
-                Text("×")
-                Spacer()
-                VStack(alignment: .trailing) {
-                    Text("\(multiplicand)")
-                    Text("\(multiplicator)")
-                }
-            }
+            QuestionPresentationView(operation: "×",
+                                     firstValue: multiplicand,
+                                     secondValue: multiplicator)
             Divider()
             HStack {
                 ZStack{
