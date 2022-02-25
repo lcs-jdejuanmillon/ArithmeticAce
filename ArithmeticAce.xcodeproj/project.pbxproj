@@ -22,6 +22,8 @@
 		0D5EABB227B425360040CA06 /* 51926-happy.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D5EABB127B425360040CA06 /* 51926-happy.json */; };
 		0D5EABB427B426990040CA06 /* 84655-swinging-sad-emoji.json in Resources */ = {isa = PBXBuildFile; fileRef = 0D5EABB327B426990040CA06 /* 84655-swinging-sad-emoji.json */; };
 		0D90CE1A27B1F4E4009AFD49 /* AdditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90CE1927B1F4E4009AFD49 /* AdditionView.swift */; };
+		0DE1E67527C845C400B5DA04 /* SharedFunctionsAndConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE1E67427C845C400B5DA04 /* SharedFunctionsAndConstants.swift */; };
+		0DE1E67827C8481100B5DA04 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE1E67727C8481100B5DA04 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		0D5EABB127B425360040CA06 /* 51926-happy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "51926-happy.json"; sourceTree = "<group>"; };
 		0D5EABB327B426990040CA06 /* 84655-swinging-sad-emoji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "84655-swinging-sad-emoji.json"; sourceTree = "<group>"; };
 		0D90CE1927B1F4E4009AFD49 /* AdditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionView.swift; sourceTree = "<group>"; };
+		0DE1E67427C845C400B5DA04 /* SharedFunctionsAndConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFunctionsAndConstants.swift; sourceTree = "<group>"; };
+		0DE1E67727C8481100B5DA04 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 			children = (
 				0D2985D427B15B5E0038914B /* ArithmeticAceApp.swift */,
 				0D5EABB027B425100040CA06 /* Animations */,
+				0D5EABAF27B4238F0040CA06 /* Helpers */,
+				0DE1E67627C847FB00B5DA04 /* Model */,
 				0D5EABAC27B422D40040CA06 /* Views */,
 				0D2985D827B15B620038914B /* Assets.xcassets */,
 				0D2985DA27B15B620038914B /* Preview Content */,
@@ -93,7 +99,6 @@
 		0D5EABAC27B422D40040CA06 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0D5EABAF27B4238F0040CA06 /* Helpers */,
 				0D90CE1927B1F4E4009AFD49 /* AdditionView.swift */,
 				0D5EABA527B40FE10040CA06 /* SubtractionView.swift */,
 				0D2985D627B15B5E0038914B /* MultiplicationView.swift */,
@@ -110,6 +115,7 @@
 				0D0F664127BAA04600AAE259 /* AnswerAndResultView.swift */,
 				0D0F664327BAA47F00AAE259 /* CheckAnswerView.swift */,
 				0D0F664527BAA64700AAE259 /* AnimationsView.swift */,
+				0DE1E67427C845C400B5DA04 /* SharedFunctionsAndConstants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -121,6 +127,14 @@
 				0D5EABB127B425360040CA06 /* 51926-happy.json */,
 			);
 			path = Animations;
+			sourceTree = "<group>";
+		};
+		0DE1E67627C847FB00B5DA04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0DE1E67727C8481100B5DA04 /* Question.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,11 +218,13 @@
 				0D2985D727B15B5E0038914B /* MultiplicationView.swift in Sources */,
 				0D0F664227BAA04600AAE259 /* AnswerAndResultView.swift in Sources */,
 				0D0F664427BAA47F00AAE259 /* CheckAnswerView.swift in Sources */,
+				0DE1E67527C845C400B5DA04 /* SharedFunctionsAndConstants.swift in Sources */,
 				0D0F664027BA9A8600AAE259 /* QuestionPresentationView.swift in Sources */,
 				0D5EABA627B40FE10040CA06 /* SubtractionView.swift in Sources */,
 				0D0F664627BAA64700AAE259 /* AnimationsView.swift in Sources */,
 				0D2985D527B15B5E0038914B /* ArithmeticAceApp.swift in Sources */,
 				0D90CE1A27B1F4E4009AFD49 /* AdditionView.swift in Sources */,
+				0DE1E67827C8481100B5DA04 /* Question.swift in Sources */,
 				0D5EABAE27B422FE0040CA06 /* LottieView.swift in Sources */,
 				0D5EABA827B411BE0040CA06 /* DivisionView.swift in Sources */,
 			);
